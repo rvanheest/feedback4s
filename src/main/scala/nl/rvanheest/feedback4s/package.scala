@@ -1,7 +1,7 @@
 package nl.rvanheest
 
-import rx.lang.scala.schedulers.NewThreadScheduler
-import rx.lang.scala.{Observable, Observer, Scheduler}
+import rx.lang.scala.schedulers.{NewThreadScheduler, TrampolineScheduler}
+import rx.lang.scala.{Observable, Observer, Scheduler, Subject}
 
 import scala.concurrent.duration.Duration
 
@@ -140,6 +140,47 @@ package object feedback4s {
 
 		def throttleFirst(duration: Duration, scheduler: Scheduler = NewThreadScheduler()) = {
 			liftRx(_.throttleFirst(duration, scheduler))
+		}
+	}
+
+	implicit class FeedbackOperators[I, O](val src: Component[I, O]) {
+		private def loop[T, S](transOut: Observable[T], setpoint: Observable[S])(combinator: (T, S) => I): Observable[I] = {
+			transOut.publish(tos => setpoint.publish(sps =>
+				tos.combineLatestWith(sps)((_, _))
+					.take(1)
+					.flatMap { case (t, s) =>
+						Observable[I](observer => {
+							tos.withLatestFrom(s +: sps)(combinator).subscribe(observer)
+							observer.onNext(combinator(t, s))
+						})
+					}))
+		}
+
+		def feedback(transducerFunc: O => I)(implicit n: Numeric[I]): Component[I, O] = {
+			feedback(Component.create(transducerFunc))
+		}
+
+		def feedback(transducer: Component[O, I])(implicit n: Numeric[I]): Component[I, O] = {
+			feedbackWith(transducer)((t, s) => n.minus(s, t))
+		}
+
+		def feedbackWith[T, S](transducerFunc: O => T)(combinatorFunc: (T, S) => I): Component[S, O] = {
+			feedbackWith(Component.create(transducerFunc))(combinatorFunc)
+		}
+
+		def feedbackWith[T, S](transducer: Component[O, T])(combinatorFunc: (T, S) => I): Component[S, O] = {
+			Component(setpoint => {
+				val srcIn = Subject[I]()
+
+				src.run(srcIn)
+					.publish(out => {
+						loop(transducer.run(out), setpoint)(combinatorFunc)
+							.observeOn(TrampolineScheduler())
+							.subscribe(srcIn)
+
+						out
+					})
+			})
 		}
 	}
 }
