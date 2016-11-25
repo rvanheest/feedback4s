@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>ApplicativeOperators - feedback4s 0.1 API - nl.rvanheest.feedback4s.ApplicativeOperators</title>
-          <meta name="description" content="ApplicativeOperators - feedback4s 0.1 API - nl.rvanheest.feedback4s.ApplicativeOperators" />
-          <meta name="keywords" content="ApplicativeOperators feedback4s 0.1 API nl.rvanheest.feedback4s.ApplicativeOperators" />
+          <title>ApplicativeOperators - feedback4s 1.0-SNAPSHOT API - nl.rvanheest.feedback4s.ApplicativeOperators</title>
+          <meta name="description" content="ApplicativeOperators - feedback4s 1.0 - SNAPSHOT API - nl.rvanheest.feedback4s.ApplicativeOperators" />
+          <meta name="keywords" content="ApplicativeOperators feedback4s 1.0 SNAPSHOT API nl.rvanheest.feedback4s.ApplicativeOperators" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -107,7 +107,7 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">src</dt><dd class="cmt"></dd></dl></div>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">src</dt><dd class="cmt"><p>the <code>Component</code> to apply the operators on</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -151,7 +151,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="nl.rvanheest.feedback4s.ApplicativeOperators#*&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="nl.rvanheest.feedback4s.ApplicativeOperators#*&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="*&gt;[X](other:nl.rvanheest.feedback4s.Component[I,X]):nl.rvanheest.feedback4s.Component[I,X]"></a>
       <a id="*&gt;[X](Component[I,X]):Component[I,X]"></a>
       <h4 class="signature">
@@ -167,8 +167,10 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;*" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Composes <code>src</code> and <code>other</code> such that the output of <code>src</code> is discarded.</p><div class="fullcomment"><div class="comment cmt"><p>Composes <code>src</code> and <code>other</code> such that the output of <code>src</code> is discarded.
+</p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the output type of <code>other</code> and the wrapping <code>Component</code></p></dd><dt class="param">other</dt><dd class="cmt"><p>the other <code>Component</code> in this composition</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from combining <code>src</code> and <code>other</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#&lt;*&gt;[X,Y](other:nl.rvanheest.feedback4s.Component[I,X])(implicitev:&lt;:&lt;[O,X=&gt;Y]):nl.rvanheest.feedback4s.Component[I,Y]" class="extmbr" name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;*&gt;">&lt;*&gt;</a>
+</p></span></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;*" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="&lt;*[X](other:nl.rvanheest.feedback4s.Component[I,X]):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="&lt;*[X](Component[I,X]):Component[I,O]"></a>
       <h4 class="signature">
@@ -184,8 +186,10 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;**&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Composes <code>src</code> and <code>other</code> such that the output of <code>other</code> is discarded.</p><div class="fullcomment"><div class="comment cmt"><p>Composes <code>src</code> and <code>other</code> such that the output of <code>other</code> is discarded.
+</p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the output type of <code>other</code></p></dd><dt class="param">other</dt><dd class="cmt"><p>the other <code>Component</code> in this composition</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from combining <code>src</code> and <code>other</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#&lt;*&gt;[X,Y](other:nl.rvanheest.feedback4s.Component[I,X])(implicitev:&lt;:&lt;[O,X=&gt;Y]):nl.rvanheest.feedback4s.Component[I,Y]" class="extmbr" name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;*&gt;">&lt;*&gt;</a>
+</p></span></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;**&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="&lt;**&gt;[X](other:nl.rvanheest.feedback4s.Component[I,O=&gt;X]):nl.rvanheest.feedback4s.Component[I,X]"></a>
       <a id="&lt;**&gt;[X](Component[I,(O)⇒X]):Component[I,X]"></a>
       <h4 class="signature">
@@ -201,8 +205,11 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;*&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Combines <code>src</code> and <code>other</code> by applying the output of <code>other</code> to the output of <code>src</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Combines <code>src</code> and <code>other</code> by applying the output of <code>other</code> to the output of <code>src</code>.</p><p><i>If <code>src</code> returns a stream of functions, rather than <code>other</code>, use <a href="#&lt;*&gt;[X,Y](other:nl.rvanheest.feedback4s.Component[I,X])(implicitev:&lt;:&lt;[O,X=&gt;Y]):nl.rvanheest.feedback4s.Component[I,Y]" class="extmbr" name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;*&gt;">&lt;*&gt;</a> instead.</i>
+</p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the output type of the functions emitted by <code>other</code>,
+          as well as the wrapping <code>Component</code></p></dd><dt class="param">other</dt><dd class="cmt"><p>the other <code>Component</code> in this composition</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from combining <code>src</code> and <code>other</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#&lt;*&gt;[X,Y](other:nl.rvanheest.feedback4s.Component[I,X])(implicitev:&lt;:&lt;[O,X=&gt;Y]):nl.rvanheest.feedback4s.Component[I,Y]" class="extmbr" name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;*&gt;">&lt;*&gt;</a>
+</p></span><span class="cmt"><p><a href="package$$ArrowOperators.html#combine[X,Y](other:nl.rvanheest.feedback4s.Component[I,X])(f:(O,X)=&gt;Y):nl.rvanheest.feedback4s.Component[I,Y]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#combine">ArrowOperators.combine</a></p></span></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;*&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="&lt;*&gt;[X,Y](other:nl.rvanheest.feedback4s.Component[I,X])(implicitev:&lt;:&lt;[O,X=&gt;Y]):nl.rvanheest.feedback4s.Component[I,Y]"></a>
       <a id="&lt;*&gt;[X,Y](Component[I,X])(&lt;:&lt;[O,(X)⇒Y]):Component[I,Y]"></a>
       <h4 class="signature">
@@ -218,7 +225,13 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Combines <code>src</code> and <code>other</code> by applying the output of <code>src</code> (of type <code>Observable[X =&gt; Y]</code>)
+to the output of <code>other</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Combines <code>src</code> and <code>other</code> by applying the output of <code>src</code> (of type <code>Observable[X =&gt; Y]</code>)
+to the output of <code>other</code>.</p><p><i>If <code>other</code> returns a stream of functions, rather than <code>src</code>, use <a href="#&lt;**&gt;[X](other:nl.rvanheest.feedback4s.Component[I,O=&gt;X]):nl.rvanheest.feedback4s.Component[I,X]" class="extmbr" name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;**&gt;">&lt;**&gt;</a> instead.</i>
+</p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the output type of <code>other</code>, as well as the input type of the functions
+          emitted by <code>src</code></p></dd><dt class="tparam">Y</dt><dd class="cmt"><p>the output type of the wrapping <code>Component</code>, as well as the output type
+          of the functions emitted by <code>src</code></p></dd><dt class="param">other</dt><dd class="cmt"><p>the other <code>Component</code> in this composition</p></dd><dt class="param">ev</dt><dd class="cmt"><p><i>implicit</i> evidence that <code>src</code>'s output type is <code>X =&gt; Y</code></p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from combining <code>src</code> and <code>other</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#&lt;**&gt;[X](other:nl.rvanheest.feedback4s.Component[I,O=&gt;X]):nl.rvanheest.feedback4s.Component[I,X]" class="extmbr" name="nl.rvanheest.feedback4s.ApplicativeOperators#&lt;**&gt;">&lt;**&gt;</a>
+</p></span><span class="cmt"><p><a href="package$$ArrowOperators.html#combine[X,Y](other:nl.rvanheest.feedback4s.Component[I,X])(f:(O,X)=&gt;Y):nl.rvanheest.feedback4s.Component[I,Y]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#combine">ArrowOperators.combine</a></p></span></dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a>
       <a id="==(Any):Boolean"></a>
@@ -384,7 +397,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="nl.rvanheest.feedback4s.ApplicativeOperators#map" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="nl.rvanheest.feedback4s.ApplicativeOperators#map" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="map[X](f:O=&gt;X):nl.rvanheest.feedback4s.Component[I,X]"></a>
       <a id="map[X]((O)⇒X):Component[I,X]"></a>
       <h4 class="signature">
@@ -400,7 +413,9 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Transforms the output type of <code>src</code> using <code>f</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Transforms the output type of <code>src</code> using <code>f</code>.
+</p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the output type of the resulting <code>Component</code></p></dd><dt class="param">f</dt><dd class="cmt"><p>the transformer function</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from applying <code>f</code> to the data in the output stream
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -468,7 +483,7 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt"></p>
+      <p class="shortcomment cmt">the <code>Component</code> to apply the operators on</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>

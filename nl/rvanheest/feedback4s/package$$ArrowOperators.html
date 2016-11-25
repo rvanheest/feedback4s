@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>ArrowOperators - feedback4s 0.1 API - nl.rvanheest.feedback4s.ArrowOperators</title>
-          <meta name="description" content="ArrowOperators - feedback4s 0.1 API - nl.rvanheest.feedback4s.ArrowOperators" />
-          <meta name="keywords" content="ArrowOperators feedback4s 0.1 API nl.rvanheest.feedback4s.ArrowOperators" />
+          <title>ArrowOperators - feedback4s 1.0-SNAPSHOT API - nl.rvanheest.feedback4s.ArrowOperators</title>
+          <meta name="description" content="ArrowOperators - feedback4s 1.0 - SNAPSHOT API - nl.rvanheest.feedback4s.ArrowOperators" />
+          <meta name="keywords" content="ArrowOperators feedback4s 1.0 SNAPSHOT API nl.rvanheest.feedback4s.ArrowOperators" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -183,7 +183,7 @@
       <p class="shortcomment cmt">Vertically composes <code>src</code> with <code>other</code> such that the input of the wrapping <code>Component</code>
 is emitted to both <code>src</code> and <code>other</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Vertically composes <code>src</code> with <code>other</code> such that the input of the wrapping <code>Component</code>
 is emitted to both <code>src</code> and <code>other</code>. For this to work, both <code>Component</code>s must have the
-same input type. The outputs of the components are combined in a tuple.</p><p><i>This is the symbolic equivalent of the <a href="#fanout[X](other:nl.rvanheest.feedback4s.Component[I,X]):nl.rvanheest.feedback4s.Component[I,(O,X)]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#fanout">fanout</a> operator.</i>
+same input type. The outputs of the components are combined in a tuple.</p><p><i>This is the symbolic equivalent of the <a href="#fanout[X](other:nl.rvanheest.feedback4s.Component[I,X]):nl.rvanheest.feedback4s.Component[I,(O,X)]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#fanout">fanout</a> operator.</i></p><p><img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/fanout-operator.png?raw=true" alt="fanout" height="200">
 </p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the output type of <code>other</code></p></dd><dt class="param">other</dt><dd class="cmt"><p>the other <code>Component</code> in this composition</p></dd><dt>returns</dt><dd class="cmt"><p>a <code>Component</code> that wraps around the composition of <code>src</code> and <code>other</code> and sends
         its input to both <code>src</code> and <code>other</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#fanout[X](other:nl.rvanheest.feedback4s.Component[I,X]):nl.rvanheest.feedback4s.Component[I,(O,X)]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#fanout">fanout</a>
 </p></span></dd></dl></div>
@@ -204,7 +204,7 @@ same input type. The outputs of the components are combined in a tuple.</p><p><i
       </a>
     </span>
       <p class="shortcomment cmt">Vertically composes <code>src</code> with <code>other</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Vertically composes <code>src</code> with <code>other</code>. The <code>Observable</code>s in each <code>Component</code> are zipped
-and wrapped in a new <code>Component</code>.</p><p><i>This is the symbolic equivalent of the <a href="#split[X,Y](other:nl.rvanheest.feedback4s.Component[X,Y]):nl.rvanheest.feedback4s.Component[(I,X),(O,Y)]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#split">split</a> operator.</i>
+and wrapped in a new <code>Component</code>.</p><p><i>This is the symbolic equivalent of the <a href="#split[X,Y](other:nl.rvanheest.feedback4s.Component[X,Y]):nl.rvanheest.feedback4s.Component[(I,X),(O,Y)]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#split">split</a> operator.</i></p><p><img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/split-operator.png?raw=true" alt="split" height="200">
 </p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the input type of <code>other</code></p></dd><dt class="tparam">Y</dt><dd class="cmt"><p>the output type of <code>other</code></p></dd><dt class="param">other</dt><dd class="cmt"><p>the other <code>Component</code> in this composition</p></dd><dt>returns</dt><dd class="cmt"><p>a <code>Component</code> that wraps around the composition of <code>src</code> and <code>other</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#split[X,Y](other:nl.rvanheest.feedback4s.Component[X,Y]):nl.rvanheest.feedback4s.Component[(I,X),(O,Y)]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#split">split</a>
 </p></span></dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -241,7 +241,7 @@ and wrapped in a new <code>Component</code>.</p><p><i>This is the symbolic equiv
       </a>
     </span>
       <p class="shortcomment cmt">Concatenates two <code>Component</code>s horizontally.</p><div class="fullcomment"><div class="comment cmt"><p>Concatenates two <code>Component</code>s horizontally. The output of <code>src</code> will be the input of <code>other</code>.
-The resulting <code>Component</code> will be a wrapper around the two combined <code>Component</code>s.</p><p><i>This is the symbolic equivalent of the <a href="#concat[X](other:nl.rvanheest.feedback4s.Component[O,X]):nl.rvanheest.feedback4s.Component[I,X]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#concat">concat</a> operator.</i></p><p><img src="https://www.haskell.org/arrows/compose.png" alt="concat">
+The resulting <code>Component</code> will be a wrapper around the two combined <code>Component</code>s.</p><p><i>This is the symbolic equivalent of the <a href="#concat[X](other:nl.rvanheest.feedback4s.Component[O,X]):nl.rvanheest.feedback4s.Component[I,X]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#concat">concat</a> operator.</i></p><p><img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/concat-operator.png?raw=true" alt="concat" height="100">
 </p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the output type of <code>other</code></p></dd><dt class="param">other</dt><dd class="cmt"><p>the right-hand <code>Component</code> in this composition</p></dd><dt>returns</dt><dd class="cmt"><p>a <code>Component</code> that wraps around the concatenation of <code>src</code> and <code>other</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#concat[X](other:nl.rvanheest.feedback4s.Component[O,X]):nl.rvanheest.feedback4s.Component[I,X]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#concat">concat</a>
 </p></span></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -325,7 +325,7 @@ function <code>f</code>. For this to work, both <code>Component</code>s must hav
       </a>
     </span>
       <p class="shortcomment cmt">Concatenates two <code>Component</code>s horizontally.</p><div class="fullcomment"><div class="comment cmt"><p>Concatenates two <code>Component</code>s horizontally. The output of <code>src</code> will be the input of <code>other</code>.
-The resulting <code>Component</code> will be a wrapper around the two combined <code>Component</code>s.</p><p><img src="https://www.haskell.org/arrows/compose.png" alt="concat">
+The resulting <code>Component</code> will be a wrapper around the two combined <code>Component</code>s.</p><p><img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/concat-operator.png?raw=true" alt="concat" height="100">
 </p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the output type of <code>other</code></p></dd><dt class="param">other</dt><dd class="cmt"><p>the right-hand <code>Component</code> in this composition</p></dd><dt>returns</dt><dd class="cmt"><p>a <code>Component</code> that wraps around the concatenation of <code>src</code> and <code>other</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#&gt;&gt;&gt;[X](other:nl.rvanheest.feedback4s.Component[O,X]):nl.rvanheest.feedback4s.Component[I,X]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#&gt;&gt;&gt;">&gt;&gt;&gt;</a>
 </p></span></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -381,7 +381,7 @@ The resulting <code>Component</code> will be a wrapper around the two combined <
       <p class="shortcomment cmt">Vertically composes <code>src</code> with <code>other</code> such that the input of the wrapping <code>Component</code>
 is emitted to both <code>src</code> and <code>other</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Vertically composes <code>src</code> with <code>other</code> such that the input of the wrapping <code>Component</code>
 is emitted to both <code>src</code> and <code>other</code>. For this to work, both <code>Component</code>s must have the
-same input type. The outputs of the components are combined in a tuple.
+same input type. The outputs of the components are combined in a tuple.</p><p><img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/fanout-operator.png?raw=true" alt="fanout" height="200">
 </p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the output type of <code>other</code></p></dd><dt class="param">other</dt><dd class="cmt"><p>the other <code>Component</code> in this composition</p></dd><dt>returns</dt><dd class="cmt"><p>a <code>Component</code> that wraps around the composition of <code>src</code> and <code>other</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#&amp;&amp;&amp;[X](other:nl.rvanheest.feedback4s.Component[I,X]):nl.rvanheest.feedback4s.Component[I,(O,X)]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#&amp;&amp;&amp;">&amp;&amp;&amp;</a>
 </p></span></dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -424,7 +424,7 @@ same input type. The outputs of the components are combined in a tuple.
       </a>
     </span>
       <p class="shortcomment cmt">Vertically composes <code>src</code> with an identity <code>Component</code> of type <code>X</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Vertically composes <code>src</code> with an identity <code>Component</code> of type <code>X</code>.</p><p><i>Note that this operator is the opposite of <a href="#second[X]:nl.rvanheest.feedback4s.Component[(X,I),(X,O)]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#second">second</a>: here the <code>X</code> is the second
-element in the tuple.</i></p><p><img src="https://www.haskell.org/arrows/first.png" alt="first">
+element in the tuple.</i></p><p><img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/first-operator.png?raw=true" alt="first" height="200">
 </p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the input and output type of the identity <code>Component</code></p></dd><dt>returns</dt><dd class="cmt"><p>a <code>Component</code> that wraps around the composition of <code>src</code> and <code>identity[X]</code>
 </p></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -546,7 +546,7 @@ element in the tuple.</i></p><p><img src="https://www.haskell.org/arrows/first.p
       </a>
     </span>
       <p class="shortcomment cmt">Vertically composes an identity <code>Component</code> of type <code>X</code> with <code>src</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Vertically composes an identity <code>Component</code> of type <code>X</code> with <code>src</code>.</p><p><i>Note that this operator is the opposite of <a href="#first[X]:nl.rvanheest.feedback4s.Component[(I,X),(O,X)]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#first">first</a>: here the <code>X</code> is the first
-element in the tuple.</i>
+element in the tuple.</i></p><p><img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/second-operator.png?raw=true" alt="second" height="200">
 </p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the input and output type of the identity <code>Component</code></p></dd><dt>returns</dt><dd class="cmt"><p>a <code>Component</code> that wraps around the composition of <code>src</code> and <code>identity[X]</code>
 </p></dd></dl></div>
     </li><li name="nl.rvanheest.feedback4s.ArrowOperators#split" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -566,7 +566,7 @@ element in the tuple.</i>
       </a>
     </span>
       <p class="shortcomment cmt">Vertically composes <code>src</code> with <code>other</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Vertically composes <code>src</code> with <code>other</code>. The <code>Observable</code>s in each <code>Component</code> are zipped
-and wrapped in a new <code>Component</code>.
+and wrapped in a new <code>Component</code>.</p><p><img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/split-operator.png?raw=true" alt="split" height="200">
 </p></div><dl class="paramcmts block"><dt class="tparam">X</dt><dd class="cmt"><p>the input type of <code>other</code></p></dd><dt class="tparam">Y</dt><dd class="cmt"><p>the output type of <code>other</code></p></dd><dt class="param">other</dt><dd class="cmt"><p>the other <code>Component</code> in this composition</p></dd><dt>returns</dt><dd class="cmt"><p>a <code>Component</code> that wraps around the composition of <code>src</code> and <code>other</code></p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="#***[X,Y](other:nl.rvanheest.feedback4s.Component[X,Y]):nl.rvanheest.feedback4s.Component[(I,X),(O,Y)]" class="extmbr" name="nl.rvanheest.feedback4s.ArrowOperators#***">***</a>
 </p></span></dd></dl></div>
     </li><li name="nl.rvanheest.feedback4s.ArrowOperators#src" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
