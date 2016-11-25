@@ -270,7 +270,7 @@ package object feedback4s {
 
 	/**
 		* Lifts several Rx operators to `Component`. If the required operator is not implemented,
-		* use the [[`liftRx`]] operator to do so instead.
+		* use the [[liftRx]] operator to do so instead.
 		*
 		* @param src the `Component` to apply the operators on
 		* @tparam I the input type of `src`
