@@ -41,7 +41,7 @@ package object feedback4s {
 			*
 			* ''This is the symbolic equivalent of the [[concat]] operator.''
 			*
-			* <img src="https://www.haskell.org/arrows/compose.png" alt="concat">
+			* <img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/concat-operator.png?raw=true" alt="concat" height="100">
 			*
 			* @param other the right-hand `Component` in this composition
 			* @tparam X the output type of `other`
@@ -54,7 +54,7 @@ package object feedback4s {
 			* Concatenates two `Component`s horizontally. The output of `src` will be the input of `other`.
 			* The resulting `Component` will be a wrapper around the two combined `Component`s.
 			*
-			* <img src="https://www.haskell.org/arrows/compose.png" alt="concat">
+			* <img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/concat-operator.png?raw=true" alt="concat" height="100">
 			*
 			* @param other the right-hand `Component` in this composition
 			* @tparam X the output type of `other`
@@ -71,7 +71,7 @@ package object feedback4s {
 			* ''Note that this operator is the opposite of [[second]]: here the `X` is the second
 			* element in the tuple.''
 			*
-			* <img src="https://www.haskell.org/arrows/first.png" alt="first">
+			* <img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/first-operator.png?raw=true" alt="first" height="200">
 			*
 			* @tparam X the input and output type of the identity `Component`
 			* @return a `Component` that wraps around the composition of `src` and `identity[X]`
@@ -86,6 +86,8 @@ package object feedback4s {
 			* ''Note that this operator is the opposite of [[first]]: here the `X` is the first
 			* element in the tuple.''
 			*
+			* <img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/second-operator.png?raw=true" alt="second" height="200">
+			*
 			* @tparam X the input and output type of the identity `Component`
 			* @return a `Component` that wraps around the composition of `src` and `identity[X]`
 			*/
@@ -98,6 +100,8 @@ package object feedback4s {
 			* and wrapped in a new `Component`.
 			*
 			* ''This is the symbolic equivalent of the [[split]] operator.''
+			*
+			* <img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/split-operator.png?raw=true" alt="split" height="200">
 			*
 			* @param other the other `Component` in this composition
 			* @tparam X the input type of `other`
@@ -115,6 +119,8 @@ package object feedback4s {
 		/**
 			* Vertically composes `src` with `other`. The `Observable`s in each `Component` are zipped
 			* and wrapped in a new `Component`.
+			*
+			* <img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/split-operator.png?raw=true" alt="split" height="200">
 			*
 			* @param other the other `Component` in this composition
 			* @tparam X the input type of `other`
@@ -135,6 +141,8 @@ package object feedback4s {
 			*
 			* ''This is the symbolic equivalent of the [[fanout]] operator.''
 			*
+			* <img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/fanout-operator.png?raw=true" alt="fanout" height="200">
+			*
 			* @param other the other `Component` in this composition
 			* @tparam X the output type of `other`
 			* @return a `Component` that wraps around the composition of `src` and `other` and sends
@@ -147,6 +155,8 @@ package object feedback4s {
 			* Vertically composes `src` with `other` such that the input of the wrapping `Component`
 			* is emitted to both `src` and `other`. For this to work, both `Component`s must have the
 			* same input type. The outputs of the components are combined in a tuple.
+			*
+			* <img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/fanout-operator.png?raw=true" alt="fanout" height="200">
 			*
 			* @param other the other `Component` in this composition
 			* @tparam X the output type of `other`
