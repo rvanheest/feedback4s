@@ -50,7 +50,7 @@
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Lifts several Rx operators to <code>Component</code>. If the required operator is not implemented,
-use the <span class="extype" name="`liftRx`">`liftRx`</span> operator to do so instead.
+use the <a href="#liftRx[Y](f:rx.lang.scala.Observable[O]=&gt;rx.lang.scala.Observable[Y]):nl.rvanheest.feedback4s.Component[I,Y]" class="extmbr" name="nl.rvanheest.feedback4s.RxOperators#liftRx">liftRx</a> operator to do so instead.
 </p></div><dl class="paramcmts block"><dt class="tparam">I</dt><dd class="cmt"><p>the input type of <code>src</code></p></dd><dt class="tparam">O</dt><dd class="cmt"><p>the output type of <code>src</code>
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
@@ -225,7 +225,7 @@ use the <span class="extype" name="`liftRx`">`liftRx`</span> operator to do so i
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action when it calls onCompleted.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action when it calls onCompleted.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnCompleted.png" alt="doOnCompleted">
+      <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action when it calls onCompleted.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action when it calls onCompleted.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnCompleted.png" alt="doOnCompleted" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">onCompleted</dt><dd class="cmt"><p>the action to invoke when the source <code>Component</code> calls onCompleted</p></dd><dt>returns</dt><dd class="cmt"><p>the source <code>Component</code> with the side-effecting behavior applied
 </p></dd></dl></div>
     </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnEach" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -244,7 +244,7 @@ use the <span class="extype" name="`liftRx`">`liftRx`</span> operator to do so i
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action for each item and terminal event it emits.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action for each item and terminal event it emits.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnEach.o.png" alt="doOnEach">
+      <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action for each item and terminal event it emits.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action for each item and terminal event it emits.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnEach.o.png" alt="doOnEach" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">observer</dt><dd class="cmt"><p>the <code>Observer</code> to be notified about onNext, onError and onCompleted events
                 on its respective methods before the actual downstream Subscriber gets notified.</p></dd><dt>returns</dt><dd class="cmt"><p>the source <code>Component</code> with the side-effecting behavior applied
 </p></dd></dl></div>
@@ -266,7 +266,7 @@ use the <span class="extype" name="`liftRx`">`liftRx`</span> operator to do so i
     </span>
       <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action if it calls onError.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action if it calls onError.
 In case the onError action throws, the downstream will receive a composite exception
-containing the original exception and the exception thrown by onError.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnError.png" alt="doOnError">
+containing the original exception and the exception thrown by onError.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnError.png" alt="doOnError" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">onError</dt><dd class="cmt"><p>the action to invoke if the source <code>Component</code> calls onError</p></dd><dt>returns</dt><dd class="cmt"><p>the source <code>Component</code> with the side-effecting behavior applied
 </p></dd></dl></div>
     </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnNext" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -285,7 +285,7 @@ containing the original exception and the exception thrown by onError.</p><p><im
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action when it calls onNext.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action when it calls onNext.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnNext.png" alt="doOnNext">
+      <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action when it calls onNext.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action when it calls onNext.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnNext.png" alt="doOnNext" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">onNext</dt><dd class="cmt"><p>the action to invoke when the source <code>Component</code> calls onNext</p></dd><dt>returns</dt><dd class="cmt"><p>the source <code>Component</code> with the side-effecting behavior applied
 </p></dd></dl></div>
     </li><li name="nl.rvanheest.feedback4s.RxOperators#drop" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -306,7 +306,7 @@ containing the original exception and the exception thrown by onError.</p><p><im
     </span>
       <p class="shortcomment cmt">Returns an <code>Component</code> that skips the first count items emitted by the source <code>Component</code>
 and emits the remainder.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that skips the first count items emitted by the source <code>Component</code>
-and emits the remainder.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/skip.png" alt="drop">
+and emits the remainder.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/skip.png" alt="drop" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>the number of items to skip</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that is identical to the source <code>Component</code> except that it does not
         emit the first count items that the source Observable emits
 </p></dd></dl></div>
@@ -330,7 +330,7 @@ and emits the remainder.</p><p><img src="https://raw.github.com/wiki/ReactiveX/R
 specified condition holds true, but emits all further source items as soon as the
 condition becomes false.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that skips all items emitted by the source <code>Component</code> as long as a
 specified condition holds true, but emits all further source items as soon as the
-condition becomes false.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/skipWhile.png" alt="dropWhile">
+condition becomes false.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/skipWhile.png" alt="dropWhile" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">predicate</dt><dd class="cmt"><p>a function to test each item emitted from the source <code>Component</code></p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that begins emitting items emitted by the source <code>Component</code>
         when the specified predicate becomes false
 </p></dd></dl></div>
@@ -384,7 +384,7 @@ condition becomes false.</p><p><img src="https://raw.github.com/wiki/ReactiveX/R
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      <p class="shortcomment cmt">Filters items emitted by an <code>Component</code> by only emitting those that satisfy a specified predicate.</p><div class="fullcomment"><div class="comment cmt"><p>Filters items emitted by an <code>Component</code> by only emitting those that satisfy a specified predicate.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/filter.png" alt="filter">
+      <p class="shortcomment cmt">Filters items emitted by an <code>Component</code> by only emitting those that satisfy a specified predicate.</p><div class="fullcomment"><div class="comment cmt"><p>Filters items emitted by an <code>Component</code> by only emitting those that satisfy a specified predicate.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/filter.png" alt="filter" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">predicate</dt><dd class="cmt"><p>a function that evaluates each item emitted by the source <code>Component</code>,
                  returning true if it passes the filter</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits only those items emitted by the source <code>Component</code> that
         the filter evaluates as true
@@ -554,7 +554,7 @@ condition becomes false.</p><p><img src="https://raw.github.com/wiki/ReactiveX/R
 by the source <code>Component</code> within periodic time intervals, where the intervals are
 defined on a particular <code>Scheduler</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits the most recently emitted item (if any) emitted
 by the source <code>Component</code> within periodic time intervals, where the intervals are
-defined on a particular <code>Scheduler</code>.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/sample.s.png" alt="sample">
+defined on a particular <code>Scheduler</code>.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/sample.s.png" alt="sample" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">interval</dt><dd class="cmt"><p>the sample rate</p></dd><dt class="param">scheduler</dt><dd class="cmt"><p>the <code>Scheduler</code> to use when sampling</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits the results of sampling the items emitted by the
         source <code>Component</code> at the specified time interval
 </p></dd></dl></div>
@@ -582,7 +582,7 @@ the same function, and so on until all items have been emitted by the source
 item emitted by a source <code>Component</code> and a seed value, then feeds the result of
 that function along with the second item emitted by the source <code>Component</code> into
 the same function, and so on until all items have been emitted by the source
-<code>Component</code>, emitting the result of each of these iterations.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/scanSeed.png" alt="scan">
+<code>Component</code>, emitting the result of each of these iterations.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/scanSeed.png" alt="scan" height="250">
 </p></div><dl class="paramcmts block"><dt class="tparam">Y</dt><dd class="cmt"><p>the initial, accumulator and result type</p></dd><dt class="param">seed</dt><dd class="cmt"><p>the initial (seed) accumulator item</p></dd><dt class="param">combiner</dt><dd class="cmt"><p>an accumulator function to be invoked on each item emitted by the
                 source <code>Component</code>, whose result will be emitted to Observers via
                 onNext and used in the next accumulator call</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits initialValue followed by the results of each call
@@ -623,7 +623,7 @@ the same function, and so on until all items have been emitted by the source
     </span>
       <p class="shortcomment cmt">Returns an <code>Component</code> that emits a specified item before it begins to emit
 items emitted by the source <code>Component</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits a specified item before it begins to emit
-items emitted by the source <code>Component</code>.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/startWith.o.png" alt="startWith">
+items emitted by the source <code>Component</code>.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/startWith.o.png" alt="startWith" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">o</dt><dd class="cmt"><p>the item to emit</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits the specified item before it begins to emit
         items emitted by the source <code>Component</code>
 </p></dd></dl></div>
@@ -662,8 +662,7 @@ items emitted by the source <code>Component</code>.</p><p><img src="https://raw.
     </span>
       <p class="shortcomment cmt">Returns an <code>Component</code> that emits only the first count items emitted by the source
 <code>Component</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits only the first count items emitted by the source
-<code>Component</code>. If the source emits fewer than count items then all of its items are emitted.
-<img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/take.png" alt="take">
+<code>Component</code>. If the source emits fewer than count items then all of its items are emitted.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/take.png" alt="take" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>the maximum number of items to emit</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits only the first count items emitted by the source
         <code>Component</code>, or all of the items from the source <code>Component</code> if that <code>Component</code> emits fewer than count items
 </p></dd></dl></div>
@@ -687,7 +686,7 @@ items emitted by the source <code>Component</code>.</p><p><img src="https://raw.
 checks the specified predicate for each item, and then completes when the condition
 is satisfied.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits items emitted by the source <code>Component</code>,
 checks the specified predicate for each item, and then completes when the condition
-is satisfied.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/takeUntil.p.png" alt="">
+is satisfied.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/takeUntil.p.png" alt="takeUntil" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">predicate</dt><dd class="cmt"><p>a function that evaluates an item emitted by the source <code>Component</code>
                  and returns a Boolean</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that first emits items emitted by the source <code>Component</code>,
         checks the specified condition after each item, and then completes when the
@@ -713,7 +712,7 @@ is satisfied.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/image
 long as each item satisfied a specified condition, and then completes as
 soon as this condition is not satisfied.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits items emitted by the source <code>Component</code> so
 long as each item satisfied a specified condition, and then completes as
-soon as this condition is not satisfied.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/takeWhile.png" alt="takeWhile">
+soon as this condition is not satisfied.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/takeWhile.png" alt="takeWhile" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">predicate</dt><dd class="cmt"><p>a function that evaluates an item emitted by the source <code>Component</code> and returns a Boolean</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits the items from the source <code>Component</code>
         so long as each item satisfies the condition defined by predicate, then completes
 </p></dd></dl></div>
@@ -739,7 +738,7 @@ by a specified Scheduler.</p><div class="fullcomment"><div class="comment cmt"><
 during sequential time windows of a specified duration, where the windows are managed
 by a specified Scheduler.</p><p>This differs from throttleLast(long, java.util.concurrent.TimeUnit) in that this only
 tracks passage of time whereas throttleLast(long, java.util.concurrent.TimeUnit) ticks
-at scheduled intervals.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/throttleFirst.s.png" alt="throttleFirst">
+at scheduled intervals.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/throttleFirst.s.png" alt="throttleFirst" height="250">
 </p></div><dl class="paramcmts block"><dt class="param">duration</dt><dd class="cmt"><p>time to wait before emitting another item after emitting the last item</p></dd><dt class="param">scheduler</dt><dd class="cmt"><p>the Scheduler to use internally to manage the timers that handle timeout for each event</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that performs the throttle operation
 </p></dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
