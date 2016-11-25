@@ -187,7 +187,7 @@ package object feedback4s {
 			* is emitted to both `src` and `other`, while their output types are combined using the
 			* function `f`. For this to work, both `Component`s must have the same input type.
 			*
-			* <img src="https://www.haskell.org/arrows/addA.png" alt="combine">
+			* <img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/combine-operator.png?raw=true" alt="combine" height="200">
 			*
 			* @param other the other `Component` in this composition
 			* @param f the combine function that computes the overall output given the outputs of
