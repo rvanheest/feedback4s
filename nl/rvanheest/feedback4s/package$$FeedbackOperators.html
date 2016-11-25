@@ -49,7 +49,8 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="tparam">I</dt><dd class="cmt"><p>the input type of <code>src</code></p></dd><dt class="tparam">O</dt><dd class="cmt"><p>the output type of <code>src</code>
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Adds operators for looping the output of a <code>Component</code> to its input.</p><p><img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/feedback-operator.png?raw=true" alt="feedback" height="200">
+</p></div><dl class="paramcmts block"><dt class="tparam">I</dt><dd class="cmt"><p>the input type of <code>src</code></p></dd><dt class="tparam">O</dt><dd class="cmt"><p>the output type of <code>src</code>
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -241,7 +242,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="nl.rvanheest.feedback4s.FeedbackOperators#feedback" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="nl.rvanheest.feedback4s.FeedbackOperators#feedback" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="feedback(transducer:nl.rvanheest.feedback4s.Component[O,I])(implicitn:Numeric[I]):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="feedback(Component[O,I])(Numeric[I]):Component[I,O]"></a>
       <h4 class="signature">
@@ -257,8 +258,12 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.FeedbackOperators#feedback" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
+input and subtracting from the input of the wrapping <code>Component</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
+input and subtracting from the input of the wrapping <code>Component</code>.
+</p></div><dl class="paramcmts block"><dt class="param">transducer</dt><dd class="cmt"><p>the <code>Component</code> to transform output elements to input elements</p></dd><dt class="param">n</dt><dd class="cmt"><p><i>implicit</i> prove that <code>I</code> is a <span class="extype" name="Numeric">Numeric</span> type</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from looping <code>src</code>
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.FeedbackOperators#feedback" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="feedback(transducerFunc:O=&gt;I)(implicitn:Numeric[I]):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="feedback((O)⇒I)(Numeric[I]):Component[I,O]"></a>
       <h4 class="signature">
@@ -274,8 +279,12 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.FeedbackOperators#feedbackWith" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
+input and subtracting from the input of the wrapping <code>Component</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
+input and subtracting from the input of the wrapping <code>Component</code>.
+</p></div><dl class="paramcmts block"><dt class="param">transducerFunc</dt><dd class="cmt"><p>the function to transform output elements to input elements</p></dd><dt class="param">n</dt><dd class="cmt"><p><i>implicit</i> prove that <code>I</code> is a <span class="extype" name="Numeric">Numeric</span> type</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from looping <code>src</code>
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.FeedbackOperators#feedbackWith" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="feedbackWith[T,S](transducer:nl.rvanheest.feedback4s.Component[O,T])(combinatorFunc:(T,S)=&gt;I):nl.rvanheest.feedback4s.Component[S,O]"></a>
       <a id="feedbackWith[T,S](Component[O,T])((T,S)⇒I):Component[S,O]"></a>
       <h4 class="signature">
@@ -291,8 +300,14 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.FeedbackOperators#feedbackWith" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
+input and combining with the input of the wrapping <code>Component</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
+input and combining with the input of the wrapping <code>Component</code>.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>the output type of the <code>transducer</code></p></dd><dt class="tparam">S</dt><dd class="cmt"><p>the input type of the wrapping <code>Component</code></p></dd><dt class="param">transducer</dt><dd class="cmt"><p>the <code>Component</code> to transform output elements to input elements</p></dd><dt class="param">combinatorFunc</dt><dd class="cmt"><p>the combine function that transforms the transformed output from <code>src</code>
+                      and the input from the wrapping <code>Component</code> into the <code>src</code>'s next
+                      input</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from looping <code>src</code>
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.FeedbackOperators#feedbackWith" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="feedbackWith[T,S](transducerFunc:O=&gt;T)(combinatorFunc:(T,S)=&gt;I):nl.rvanheest.feedback4s.Component[S,O]"></a>
       <a id="feedbackWith[T,S]((O)⇒T)((T,S)⇒I):Component[S,O]"></a>
       <h4 class="signature">
@@ -308,7 +323,13 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
+input and combining with the input of the wrapping <code>Component</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
+input and combining with the input of the wrapping <code>Component</code>.
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>type that <code>src</code>'s output is transformed to</p></dd><dt class="tparam">S</dt><dd class="cmt"><p>the input type of the wrapping <code>Component</code></p></dd><dt class="param">transducerFunc</dt><dd class="cmt"><p>the function to transform the output elements to input elements</p></dd><dt class="param">combinatorFunc</dt><dd class="cmt"><p>the combine function that transforms the transformed output from <code>src</code>
+                      and the input from the wrapping <code>Component</code> into the <code>src</code>'s next
+                      input</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from looping <code>src</code>
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
