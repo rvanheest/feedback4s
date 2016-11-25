@@ -21,13 +21,33 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>nl.rvanheest</groupId>
+    <groupId>com.github.rvanheest</groupId>
     <artifactId>feedback4s</artifactId>
     <version>0.1</version>
 
-    <name>feedback4s</name>
+    <name>${project.groupId}:${project.artifactId}</name>
     <description>An API for creating and running feedback control systems</description>
+    <url>https://github.com/rvanheest/feedback4s</url>
     <inceptionYear>2016</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/rvanheest/feedback4s.git</connection>
+        <developerConnection>scm:git:ssh://github.com:rvanheest/feedback4s.git</developerConnection>
+        <url>http://github.com/rvanheest/feedback4s/tree/master</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/rvanheest/feedback4s/issues</url>
+    </issueManagement>
 
     <developers>
         <developer>

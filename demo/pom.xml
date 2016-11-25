@@ -21,13 +21,33 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>nl.rvanheest</groupId>
+    <groupId>com.github.rvanheest</groupId>
     <artifactId>feedback4s-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>feedback4s - demo</name>
+    <name>feedback4s - demos</name>
     <description>Demos for feedback4s</description>
+    <url>https://github.com/rvanheest/feedback4s</url>
     <inceptionYear>2016</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/rvanheest/feedback4s.git</connection>
+        <developerConnection>scm:git:ssh://github.com:rvanheest/feedback4s.git</developerConnection>
+        <url>http://github.com/rvanheest/feedback4s/tree/master</url>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/rvanheest/feedback4s/issues</url>
+    </issueManagement>
 
     <developers>
         <developer>
@@ -62,7 +82,7 @@
         </dependency>
 
         <dependency>
-            <groupId>nl.rvanheest</groupId>
+            <groupId>com.github.rvanheest</groupId>
             <artifactId>feedback4s</artifactId>
             <version>0.1</version>
         </dependency>
@@ -70,7 +90,6 @@
 
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
-        <testSourceDirectory>src/test/scala</testSourceDirectory>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
