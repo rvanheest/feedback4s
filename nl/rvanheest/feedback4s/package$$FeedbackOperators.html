@@ -1,9 +1,9 @@
 <!DOCTYPE html >
 <html>
         <head>
-          <title>FeedbackOperators - feedback4s 1.0-SNAPSHOT API - nl.rvanheest.feedback4s.FeedbackOperators</title>
-          <meta name="description" content="FeedbackOperators - feedback4s 1.0 - SNAPSHOT API - nl.rvanheest.feedback4s.FeedbackOperators" />
-          <meta name="keywords" content="FeedbackOperators feedback4s 1.0 SNAPSHOT API nl.rvanheest.feedback4s.FeedbackOperators" />
+          <title>FeedbackOperators - feedback4s 0.1 API - nl.rvanheest.feedback4s.FeedbackOperators</title>
+          <meta name="description" content="FeedbackOperators - feedback4s 0.1 API - nl.rvanheest.feedback4s.FeedbackOperators" />
+          <meta name="keywords" content="FeedbackOperators feedback4s 0.1 API nl.rvanheest.feedback4s.FeedbackOperators" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -261,7 +261,7 @@
       <p class="shortcomment cmt">Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
 input and subtracting from the input of the wrapping <code>Component</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
 input and subtracting from the input of the wrapping <code>Component</code>.
-</p></div><dl class="paramcmts block"><dt class="param">transducer</dt><dd class="cmt"><p>the <code>Component</code> to transform output elements to input elements</p></dd><dt class="param">n</dt><dd class="cmt"><p><i>implicit</i> prove that <code>I</code> is a <span class="extype" name="Numeric">Numeric</span> type</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from looping <code>src</code>
+</p></div><dl class="paramcmts block"><dt class="param">transducer</dt><dd class="cmt"><p>the <code>Component</code> to transform output elements to input elements</p></dd><dt class="param">n</dt><dd class="cmt"><p><i>implicit</i> prove that <code>I</code> is a <code>Numeric</code> type</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from looping <code>src</code>
 </p></dd></dl></div>
     </li><li name="nl.rvanheest.feedback4s.FeedbackOperators#feedback" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="feedback(transducerFunc:O=&gt;I)(implicitn:Numeric[I]):nl.rvanheest.feedback4s.Component[I,O]"></a>
@@ -282,7 +282,7 @@ input and subtracting from the input of the wrapping <code>Component</code>.
       <p class="shortcomment cmt">Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
 input and subtracting from the input of the wrapping <code>Component</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a loop in the stream by transforming the output to the same type as <code>src</code>'s
 input and subtracting from the input of the wrapping <code>Component</code>.
-</p></div><dl class="paramcmts block"><dt class="param">transducerFunc</dt><dd class="cmt"><p>the function to transform output elements to input elements</p></dd><dt class="param">n</dt><dd class="cmt"><p><i>implicit</i> prove that <code>I</code> is a <span class="extype" name="Numeric">Numeric</span> type</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from looping <code>src</code>
+</p></div><dl class="paramcmts block"><dt class="param">transducerFunc</dt><dd class="cmt"><p>the function to transform output elements to input elements</p></dd><dt class="param">n</dt><dd class="cmt"><p><i>implicit</i> prove that <code>I</code> is a <code>Numeric</code> type</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> resulting from looping <code>src</code>
 </p></dd></dl></div>
     </li><li name="nl.rvanheest.feedback4s.FeedbackOperators#feedbackWith" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="feedbackWith[T,S](transducer:nl.rvanheest.feedback4s.Component[O,T])(combinatorFunc:(T,S)=&gt;I):nl.rvanheest.feedback4s.Component[S,O]"></a>
