@@ -1,7 +1,8 @@
 feedback4s
 ==========
 [![Build Status](https://travis-ci.org/rvanheest/feedback4s.png?branch=master)](https://travis-ci.org/rvanheest/feedback4s)
-[![codecov.io](http://codecov.io/github/rvanheest/feedback4s/coverage.svg?branch=master)](http://codecov.io/github/rvanheest/feedback4s?branch=master)
+[![codecov](https://codecov.io/gh/rvanheest/feedback4s/branch/master/graph/badge.svg)](https://codecov.io/gh/rvanheest/feedback4s)
+
 
 An API for creating Feedback Control Systems in Scala.
 
