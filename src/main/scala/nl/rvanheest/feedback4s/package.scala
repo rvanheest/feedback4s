@@ -501,12 +501,16 @@ package object feedback4s {
 	}
 
 	/**
+		* Adds operators for looping the output of a `Component` to its input.
+		*
+		* <img src="https://github.com/rvanheest/feedback4s/blob/gh-pages/img/feedback-operator.png?raw=true" alt="feedback" height="200">
 		*
 		* @param src the `Component` to apply the operators on
 		* @tparam I the input type of `src`
 		* @tparam O the output type of `src`
 		*/
 	implicit class FeedbackOperators[I, O](val src: Component[I, O]) {
+
 		private def loop[T, S](transOut: Observable[T], setpoint: Observable[S])(combinator: (T, S) => I): Observable[I] = {
 			transOut.publish(tos => setpoint.publish(sps =>
 				tos.combineLatestWith(sps)((_, _))
@@ -519,18 +523,58 @@ package object feedback4s {
 					}))
 		}
 
+		/**
+			* Creates a loop in the stream by transforming the output to the same type as `src`'s
+			* input and subtracting from the input of the wrapping `Component`.
+			*
+			* @param transducerFunc the function to transform output elements to input elements
+			* @param n ''implicit'' prove that `I` is a [[Numeric]] type
+			* @return the `Component` resulting from looping `src`
+			*/
 		def feedback(transducerFunc: O => I)(implicit n: Numeric[I]): Component[I, O] = {
 			feedback(Component.create(transducerFunc))
 		}
 
+		/**
+			* Creates a loop in the stream by transforming the output to the same type as `src`'s
+			* input and subtracting from the input of the wrapping `Component`.
+			*
+			* @param transducer the `Component` to transform output elements to input elements
+			* @param n ''implicit'' prove that `I` is a [[Numeric]] type
+			* @return the `Component` resulting from looping `src`
+			*/
 		def feedback(transducer: Component[O, I])(implicit n: Numeric[I]): Component[I, O] = {
 			feedbackWith(transducer)((t, s) => n.minus(s, t))
 		}
 
+		/**
+			* Creates a loop in the stream by transforming the output to the same type as `src`'s
+			* input and combining with the input of the wrapping `Component`.
+			*
+			* @param transducerFunc the function to transform the output elements to input elements
+			* @param combinatorFunc the combine function that transforms the transformed output from `src`
+			*                       and the input from the wrapping `Component` into the `src`'s next
+			*                       input
+			* @tparam T type that `src`'s output is transformed to
+			* @tparam S the input type of the wrapping `Component`
+			* @return the `Component` resulting from looping `src`
+			*/
 		def feedbackWith[T, S](transducerFunc: O => T)(combinatorFunc: (T, S) => I): Component[S, O] = {
 			feedbackWith(Component.create(transducerFunc))(combinatorFunc)
 		}
 
+		/**
+			* Creates a loop in the stream by transforming the output to the same type as `src`'s
+			* input and combining with the input of the wrapping `Component`.
+			*
+			* @param transducer the `Component` to transform output elements to input elements
+			* @param combinatorFunc the combine function that transforms the transformed output from `src`
+			*                       and the input from the wrapping `Component` into the `src`'s next
+			*                       input
+			* @tparam T the output type of the `transducer`
+			* @tparam S the input type of the wrapping `Component`
+			* @return the `Component` resulting from looping `src`
+			*/
 		def feedbackWith[T, S](transducer: Component[O, T])(combinatorFunc: (T, S) => I): Component[S, O] = {
 			Component(setpoint => {
 				val srcIn = Subject[I]()
