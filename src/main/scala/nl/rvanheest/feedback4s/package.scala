@@ -190,27 +190,79 @@ package object feedback4s {
 	/**
 		* Adds functorial and applicative operators for `Component`
 		*
-		* @param src
+		* @param src the `Component` to apply the operators on
 		* @tparam I the input type of `src`
 		* @tparam O the output type of `src`
 		*/
 	implicit class ApplicativeOperators[I, O](val src: Component[I, O]) {
+
+		/**
+			* Transforms the output type of `src` using `f`.
+			*
+			* @param f the transformer function
+			* @tparam X the output type of the resulting `Component`
+			* @return the `Component` resulting from applying `f` to the data in the output stream
+			*/
 		def map[X](f: O => X): Component[I, X] = {
 			src >>> Component.create(f)
 		}
 
+		/**
+			* Combines `src` and `other` by applying the output of `src` (of type `Observable[X => Y]`)
+			* to the output of `other`.
+			*
+			* ''If `other` returns a stream of functions, rather than `src`, use [[<**>]] instead.''
+			*
+			* @param other the other `Component` in this composition
+			* @param ev ''implicit'' evidence that `src`'s output type is `X => Y`
+			* @tparam X the output type of `other`, as well as the input type of the functions
+			*           emitted by `src`
+			* @tparam Y the output type of the wrapping `Component`, as well as the output type
+			*           of the functions emitted by `src`
+			* @return the `Component` resulting from combining `src` and `other`
+			* @see [[ArrowOperators.combine]]
+			* @see [[<**>]]
+			*/
 		def <*>[X, Y](other: Component[I, X])(implicit ev: O <:< (X => Y)): Component[I, Y] = {
 			src.combine(other)(ev(_)(_))
 		}
 
+		/**
+			* Composes `src` and `other` such that the output of `src` is discarded.
+			*
+			* @param other the other `Component` in this composition
+			* @tparam X the output type of `other` and the wrapping `Component`
+			* @return the `Component` resulting from combining `src` and `other`
+			* @see [[<*>]]
+			*/
 		def *>[X](other: Component[I, X]): Component[I, X] = {
 			src.map[X => X](_ => identity) <*> other
 		}
 
+		/**
+			* Composes `src` and `other` such that the output of `other` is discarded.
+			*
+			* @param other the other `Component` in this composition
+			* @tparam X the output type of `other`
+			* @return the `Component` resulting from combining `src` and `other`
+			* @see [[<*>]]
+			*/
 		def <*[X](other: Component[I, X]): Component[I, O] = {
 			src.map[X => O](o => _ => o) <*> other
 		}
 
+		/**
+			* Combines `src` and `other` by applying the output of `other` to the output of `src`.
+			*
+			* ''If `src` returns a stream of functions, rather than `other`, use [[<*>]] instead.''
+			*
+			* @param other the other `Component` in this composition
+			* @tparam X the output type of the functions emitted by `other`,
+			*           as well as the wrapping `Component`
+			* @return the `Component` resulting from combining `src` and `other`
+			* @see [[ArrowOperators.combine]]
+			* @see [[<*>]]
+			*/
 		def <**>[X](other: Component[I, O => X]): Component[I, X] = {
 			other <*> src
 		}
@@ -218,7 +270,7 @@ package object feedback4s {
 
 	/**
 		*
-		* @param src
+		* @param src the `Component` to apply the operators on
 		* @tparam I the input type of `src`
 		* @tparam O the output type of `src`
 		*/
@@ -298,7 +350,7 @@ package object feedback4s {
 
 	/**
 		*
-		* @param src
+		* @param src the `Component` to apply the operators on
 		* @tparam I the input type of `src`
 		* @tparam O the output type of `src`
 		*/
