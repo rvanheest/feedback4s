@@ -49,7 +49,9 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="tparam">I</dt><dd class="cmt"><p>the input type of <code>src</code></p></dd><dt class="tparam">O</dt><dd class="cmt"><p>the output type of <code>src</code>
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Lifts several Rx operators to <code>Component</code>. If the required operator is not implemented,
+use the <span class="extype" name="`liftRx`">`liftRx`</span> operator to do so instead.
+</p></div><dl class="paramcmts block"><dt class="tparam">I</dt><dd class="cmt"><p>the input type of <code>src</code></p></dd><dt class="tparam">O</dt><dd class="cmt"><p>the output type of <code>src</code>
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -207,8 +209,8 @@
     </span>)</span>
               
         </dd></dl></div>
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnCompleted" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="doOnCompleted(consumer:=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]"></a>
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnCompleted" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="doOnCompleted(onCompleted:=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="doOnCompleted(⇒Unit):Component[I,O]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -216,66 +218,17 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">doOnCompleted</span><span class="params">(<span name="consumer">consumer: ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <a href="Component.html" class="extype" name="nl.rvanheest.feedback4s.Component">Component</a>[<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.I">I</span>, <span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>]</span>
+        <span class="name">doOnCompleted</span><span class="params">(<span name="onCompleted">onCompleted: ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <a href="Component.html" class="extype" name="nl.rvanheest.feedback4s.Component">Component</a>[<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.I">I</span>, <span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#nl.rvanheest.feedback4s.package$$RxOperators@doOnCompleted(consumer:=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]" title="Permalink" target="_top">
+      <a href="../../../index.html#nl.rvanheest.feedback4s.package$$RxOperators@doOnCompleted(onCompleted:=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnEach" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="doOnEach(onNext:O=&gt;Unit,onError:Throwable=&gt;Unit,onCompleted:()=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]"></a>
-      <a id="doOnEach((O)⇒Unit,(Throwable)⇒Unit,()⇒Unit):Component[I,O]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">doOnEach</span><span class="params">(<span name="onNext">onNext: (<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>, <span name="onError">onError: (<span class="extype" name="scala.Throwable">Throwable</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>, <span name="onCompleted">onCompleted: () ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <a href="Component.html" class="extype" name="nl.rvanheest.feedback4s.Component">Component</a>[<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.I">I</span>, <span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#nl.rvanheest.feedback4s.package$$RxOperators@doOnEach(onNext:O=&gt;Unit,onError:Throwable=&gt;Unit,onCompleted:()=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnEach" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="doOnEach(onNext:O=&gt;Unit,onError:Throwable=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]"></a>
-      <a id="doOnEach((O)⇒Unit,(Throwable)⇒Unit):Component[I,O]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">doOnEach</span><span class="params">(<span name="onNext">onNext: (<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>, <span name="onError">onError: (<span class="extype" name="scala.Throwable">Throwable</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <a href="Component.html" class="extype" name="nl.rvanheest.feedback4s.Component">Component</a>[<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.I">I</span>, <span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#nl.rvanheest.feedback4s.package$$RxOperators@doOnEach(onNext:O=&gt;Unit,onError:Throwable=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnEach" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="doOnEach(onNext:O=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]"></a>
-      <a id="doOnEach((O)⇒Unit):Component[I,O]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">doOnEach</span><span class="params">(<span name="onNext">onNext: (<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <a href="Component.html" class="extype" name="nl.rvanheest.feedback4s.Component">Component</a>[<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.I">I</span>, <span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>]</span>
-      </span>
-      </h4><span class="permalink">
-      <a href="../../../index.html#nl.rvanheest.feedback4s.package$$RxOperators@doOnEach(onNext:O=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]" title="Permalink" target="_top">
-        <img src="../../../lib/permalink.png" />
-      </a>
-    </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnEach" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action when it calls onCompleted.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action when it calls onCompleted.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnCompleted.png" alt="doOnCompleted">
+</p></div><dl class="paramcmts block"><dt class="param">onCompleted</dt><dd class="cmt"><p>the action to invoke when the source <code>Component</code> calls onCompleted</p></dd><dt>returns</dt><dd class="cmt"><p>the source <code>Component</code> with the side-effecting behavior applied
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnEach" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="doOnEach(observer:rx.lang.scala.Observer[O]):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="doOnEach(Observer[O]):Component[I,O]"></a>
       <h4 class="signature">
@@ -291,9 +244,12 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="doOnError(consumer:Throwable=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]"></a>
+      <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action for each item and terminal event it emits.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action for each item and terminal event it emits.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnEach.o.png" alt="doOnEach">
+</p></div><dl class="paramcmts block"><dt class="param">observer</dt><dd class="cmt"><p>the <code>Observer</code> to be notified about onNext, onError and onCompleted events
+                on its respective methods before the actual downstream Subscriber gets notified.</p></dd><dt>returns</dt><dd class="cmt"><p>the source <code>Component</code> with the side-effecting behavior applied
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnError" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="doOnError(onError:Throwable=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="doOnError((Throwable)⇒Unit):Component[I,O]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -301,16 +257,20 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">doOnError</span><span class="params">(<span name="consumer">consumer: (<span class="extype" name="scala.Throwable">Throwable</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <a href="Component.html" class="extype" name="nl.rvanheest.feedback4s.Component">Component</a>[<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.I">I</span>, <span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>]</span>
+        <span class="name">doOnError</span><span class="params">(<span name="onError">onError: (<span class="extype" name="scala.Throwable">Throwable</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <a href="Component.html" class="extype" name="nl.rvanheest.feedback4s.Component">Component</a>[<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.I">I</span>, <span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#nl.rvanheest.feedback4s.package$$RxOperators@doOnError(consumer:Throwable=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]" title="Permalink" target="_top">
+      <a href="../../../index.html#nl.rvanheest.feedback4s.package$$RxOperators@doOnError(onError:Throwable=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnNext" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="doOnNext(consumer:O=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]"></a>
+      <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action if it calls onError.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action if it calls onError.
+In case the onError action throws, the downstream will receive a composite exception
+containing the original exception and the exception thrown by onError.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnError.png" alt="doOnError">
+</p></div><dl class="paramcmts block"><dt class="param">onError</dt><dd class="cmt"><p>the action to invoke if the source <code>Component</code> calls onError</p></dd><dt>returns</dt><dd class="cmt"><p>the source <code>Component</code> with the side-effecting behavior applied
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#doOnNext" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="doOnNext(onNext:O=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="doOnNext((O)⇒Unit):Component[I,O]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -318,15 +278,17 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">doOnNext</span><span class="params">(<span name="consumer">consumer: (<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <a href="Component.html" class="extype" name="nl.rvanheest.feedback4s.Component">Component</a>[<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.I">I</span>, <span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>]</span>
+        <span class="name">doOnNext</span><span class="params">(<span name="onNext">onNext: (<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <a href="Component.html" class="extype" name="nl.rvanheest.feedback4s.Component">Component</a>[<span class="extype" name="nl.rvanheest.feedback4s.RxOperators.I">I</span>, <span class="extype" name="nl.rvanheest.feedback4s.RxOperators.O">O</span>]</span>
       </span>
       </h4><span class="permalink">
-      <a href="../../../index.html#nl.rvanheest.feedback4s.package$$RxOperators@doOnNext(consumer:O=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]" title="Permalink" target="_top">
+      <a href="../../../index.html#nl.rvanheest.feedback4s.package$$RxOperators@doOnNext(onNext:O=&gt;Unit):nl.rvanheest.feedback4s.Component[I,O]" title="Permalink" target="_top">
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#drop" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Modifies the source <code>Component</code> so that it invokes an action when it calls onNext.</p><div class="fullcomment"><div class="comment cmt"><p>Modifies the source <code>Component</code> so that it invokes an action when it calls onNext.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnNext.png" alt="doOnNext">
+</p></div><dl class="paramcmts block"><dt class="param">onNext</dt><dd class="cmt"><p>the action to invoke when the source <code>Component</code> calls onNext</p></dd><dt>returns</dt><dd class="cmt"><p>the source <code>Component</code> with the side-effecting behavior applied
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#drop" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="drop(n:Int):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="drop(Int):Component[I,O]"></a>
       <h4 class="signature">
@@ -342,8 +304,13 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#dropWhile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Returns an <code>Component</code> that skips the first count items emitted by the source <code>Component</code>
+and emits the remainder.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that skips the first count items emitted by the source <code>Component</code>
+and emits the remainder.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/skip.png" alt="drop">
+</p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>the number of items to skip</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that is identical to the source <code>Component</code> except that it does not
+        emit the first count items that the source Observable emits
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#dropWhile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="dropWhile(predicate:O=&gt;Boolean):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="dropWhile((O)⇒Boolean):Component[I,O]"></a>
       <h4 class="signature">
@@ -359,7 +326,14 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Returns an <code>Component</code> that skips all items emitted by the source <code>Component</code> as long as a
+specified condition holds true, but emits all further source items as soon as the
+condition becomes false.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that skips all items emitted by the source <code>Component</code> as long as a
+specified condition holds true, but emits all further source items as soon as the
+condition becomes false.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/skipWhile.png" alt="dropWhile">
+</p></div><dl class="paramcmts block"><dt class="param">predicate</dt><dd class="cmt"><p>a function to test each item emitted from the source <code>Component</code></p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that begins emitting items emitted by the source <code>Component</code>
+        when the specified predicate becomes false
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -394,7 +368,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#filter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#filter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="filter(predicate:O=&gt;Boolean):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="filter((O)⇒Boolean):Component[I,O]"></a>
       <h4 class="signature">
@@ -410,7 +384,11 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Filters items emitted by an <code>Component</code> by only emitting those that satisfy a specified predicate.</p><div class="fullcomment"><div class="comment cmt"><p>Filters items emitted by an <code>Component</code> by only emitting those that satisfy a specified predicate.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/filter.png" alt="filter">
+</p></div><dl class="paramcmts block"><dt class="param">predicate</dt><dd class="cmt"><p>a function that evaluates each item emitted by the source <code>Component</code>,
+                 returning true if it passes the filter</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits only those items emitted by the source <code>Component</code> that
+        the filter evaluates as true
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -485,7 +463,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#liftRx" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#liftRx" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="liftRx[Y](f:rx.lang.scala.Observable[O]=&gt;rx.lang.scala.Observable[Y]):nl.rvanheest.feedback4s.Component[I,Y]"></a>
       <a id="liftRx[Y]((Observable[O])⇒Observable[Y]):Component[I,Y]"></a>
       <h4 class="signature">
@@ -501,7 +479,10 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Lifts an operator from Rx into a <code>Component</code> and concats this with <code>src</code>
+</p><div class="fullcomment"><div class="comment cmt"><p>Lifts an operator from Rx into a <code>Component</code> and concats this with <code>src</code>
+</p></div><dl class="paramcmts block"><dt class="tparam">Y</dt><dd class="cmt"><p>the output type of the Rx operator</p></dd><dt class="param">f</dt><dd class="cmt"><p>the Rx operator</p></dd><dt>returns</dt><dd class="cmt"><p>the <code>Component</code> wrapping the concatenation between <code>src</code> and the Rx operator
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -553,7 +534,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#sample" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#sample" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="sample(interval:scala.concurrent.duration.Duration,scheduler:rx.lang.scala.Scheduler):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="sample(Duration,Scheduler):Component[I,O]"></a>
       <h4 class="signature">
@@ -569,8 +550,15 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#scan" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Returns an <code>Component</code> that emits the most recently emitted item (if any) emitted
+by the source <code>Component</code> within periodic time intervals, where the intervals are
+defined on a particular <code>Scheduler</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits the most recently emitted item (if any) emitted
+by the source <code>Component</code> within periodic time intervals, where the intervals are
+defined on a particular <code>Scheduler</code>.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/sample.s.png" alt="sample">
+</p></div><dl class="paramcmts block"><dt class="param">interval</dt><dd class="cmt"><p>the sample rate</p></dd><dt class="param">scheduler</dt><dd class="cmt"><p>the <code>Scheduler</code> to use when sampling</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits the results of sampling the items emitted by the
+        source <code>Component</code> at the specified time interval
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#scan" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="scan[Y](seed:Y)(combiner:(Y,O)=&gt;Y):nl.rvanheest.feedback4s.Component[I,Y]"></a>
       <a id="scan[Y](Y)((Y,O)⇒Y):Component[I,Y]"></a>
       <h4 class="signature">
@@ -586,7 +574,20 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Returns an <code>Component</code> that applies a specified accumulator function to the first
+item emitted by a source <code>Component</code> and a seed value, then feeds the result of
+that function along with the second item emitted by the source <code>Component</code> into
+the same function, and so on until all items have been emitted by the source
+<code>Component</code>, emitting the result of each of these iterations.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that applies a specified accumulator function to the first
+item emitted by a source <code>Component</code> and a seed value, then feeds the result of
+that function along with the second item emitted by the source <code>Component</code> into
+the same function, and so on until all items have been emitted by the source
+<code>Component</code>, emitting the result of each of these iterations.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/scanSeed.png" alt="scan">
+</p></div><dl class="paramcmts block"><dt class="tparam">Y</dt><dd class="cmt"><p>the initial, accumulator and result type</p></dd><dt class="param">seed</dt><dd class="cmt"><p>the initial (seed) accumulator item</p></dd><dt class="param">combiner</dt><dd class="cmt"><p>an accumulator function to be invoked on each item emitted by the
+                source <code>Component</code>, whose result will be emitted to Observers via
+                onNext and used in the next accumulator call</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits initialValue followed by the results of each call
+        to the accumulator function
+</p></dd></dl></div>
     </li><li name="nl.rvanheest.feedback4s.RxOperators#src" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="src:nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="src:Component[I,O]"></a>
@@ -604,7 +605,7 @@
       </a>
     </span>
       <p class="shortcomment cmt">the <code>Component</code> to apply the operators on</p>
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#startWith" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#startWith" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="startWith(o:O):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="startWith(O):Component[I,O]"></a>
       <h4 class="signature">
@@ -620,7 +621,12 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Returns an <code>Component</code> that emits a specified item before it begins to emit
+items emitted by the source <code>Component</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits a specified item before it begins to emit
+items emitted by the source <code>Component</code>.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/startWith.o.png" alt="startWith">
+</p></div><dl class="paramcmts block"><dt class="param">o</dt><dd class="cmt"><p>the item to emit</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits the specified item before it begins to emit
+        items emitted by the source <code>Component</code>
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -638,7 +644,7 @@
       </a>
     </span>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#take" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#take" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="take(n:Int):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="take(Int):Component[I,O]"></a>
       <h4 class="signature">
@@ -654,8 +660,14 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#takeUntil" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Returns an <code>Component</code> that emits only the first count items emitted by the source
+<code>Component</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits only the first count items emitted by the source
+<code>Component</code>. If the source emits fewer than count items then all of its items are emitted.
+<img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/take.png" alt="take">
+</p></div><dl class="paramcmts block"><dt class="param">n</dt><dd class="cmt"><p>the maximum number of items to emit</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits only the first count items emitted by the source
+        <code>Component</code>, or all of the items from the source <code>Component</code> if that <code>Component</code> emits fewer than count items
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#takeUntil" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="takeUntil(predicate:O=&gt;Boolean):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="takeUntil((O)⇒Boolean):Component[I,O]"></a>
       <h4 class="signature">
@@ -671,8 +683,17 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#takeWhile" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Returns an <code>Component</code> that emits items emitted by the source <code>Component</code>,
+checks the specified predicate for each item, and then completes when the condition
+is satisfied.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits items emitted by the source <code>Component</code>,
+checks the specified predicate for each item, and then completes when the condition
+is satisfied.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/takeUntil.p.png" alt="">
+</p></div><dl class="paramcmts block"><dt class="param">predicate</dt><dd class="cmt"><p>a function that evaluates an item emitted by the source <code>Component</code>
+                 and returns a Boolean</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that first emits items emitted by the source <code>Component</code>,
+        checks the specified condition after each item, and then completes when the
+        condition is satisfied
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#takeWhile" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="takeWhile(predicate:O=&gt;Boolean):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="takeWhile((O)⇒Boolean):Component[I,O]"></a>
       <h4 class="signature">
@@ -688,8 +709,15 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
-    </li><li name="nl.rvanheest.feedback4s.RxOperators#throttleFirst" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Returns an <code>Component</code> that emits items emitted by the source <code>Component</code> so
+long as each item satisfied a specified condition, and then completes as
+soon as this condition is not satisfied.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits items emitted by the source <code>Component</code> so
+long as each item satisfied a specified condition, and then completes as
+soon as this condition is not satisfied.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/takeWhile.png" alt="takeWhile">
+</p></div><dl class="paramcmts block"><dt class="param">predicate</dt><dd class="cmt"><p>a function that evaluates an item emitted by the source <code>Component</code> and returns a Boolean</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that emits the items from the source <code>Component</code>
+        so long as each item satisfies the condition defined by predicate, then completes
+</p></dd></dl></div>
+    </li><li name="nl.rvanheest.feedback4s.RxOperators#throttleFirst" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="throttleFirst(duration:scala.concurrent.duration.Duration,scheduler:rx.lang.scala.Scheduler):nl.rvanheest.feedback4s.Component[I,O]"></a>
       <a id="throttleFirst(Duration,Scheduler):Component[I,O]"></a>
       <h4 class="signature">
@@ -705,7 +733,15 @@
         <img src="../../../lib/permalink.png" />
       </a>
     </span>
-      
+      <p class="shortcomment cmt">Returns an <code>Component</code> that emits only the first item emitted by the source <code>Component</code>
+during sequential time windows of a specified duration, where the windows are managed
+by a specified Scheduler.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an <code>Component</code> that emits only the first item emitted by the source <code>Component</code>
+during sequential time windows of a specified duration, where the windows are managed
+by a specified Scheduler.</p><p>This differs from throttleLast(long, java.util.concurrent.TimeUnit) in that this only
+tracks passage of time whereas throttleLast(long, java.util.concurrent.TimeUnit) ticks
+at scheduled intervals.</p><p><img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/throttleFirst.s.png" alt="throttleFirst">
+</p></div><dl class="paramcmts block"><dt class="param">duration</dt><dd class="cmt"><p>time to wait before emitting another item after emitting the last item</p></dd><dt class="param">scheduler</dt><dd class="cmt"><p>the Scheduler to use internally to manage the timers that handle timeout for each event</p></dd><dt>returns</dt><dd class="cmt"><p>an <code>Component</code> that performs the throttle operation
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <a id="toString():String"></a>
