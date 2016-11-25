@@ -528,7 +528,7 @@ package object feedback4s {
 			* input and subtracting from the input of the wrapping `Component`.
 			*
 			* @param transducerFunc the function to transform output elements to input elements
-			* @param n ''implicit'' prove that `I` is a [[Numeric]] type
+			* @param n ''implicit'' prove that `I` is a `Numeric` type
 			* @return the `Component` resulting from looping `src`
 			*/
 		def feedback(transducerFunc: O => I)(implicit n: Numeric[I]): Component[I, O] = {
@@ -540,7 +540,7 @@ package object feedback4s {
 			* input and subtracting from the input of the wrapping `Component`.
 			*
 			* @param transducer the `Component` to transform output elements to input elements
-			* @param n ''implicit'' prove that `I` is a [[Numeric]] type
+			* @param n ''implicit'' prove that `I` is a `Numeric` type
 			* @return the `Component` resulting from looping `src`
 			*/
 		def feedback(transducer: Component[O, I])(implicit n: Numeric[I]): Component[I, O] = {

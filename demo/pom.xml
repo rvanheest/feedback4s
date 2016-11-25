@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>nl.rvanheest</groupId>
-    <artifactId>feedback4s</artifactId>
-    <version>0.1</version>
+    <artifactId>feedback4s-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-    <name>feedback4s</name>
-    <description>An API for creating and running feedback control systems</description>
+    <name>feedback4s - demo</name>
+    <description>Demos for feedback4s</description>
     <inceptionYear>2016</inceptionYear>
 
     <developers>
@@ -27,22 +27,27 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
+            <groupId>io.reactivex</groupId>
+            <artifactId>rxscala_2.11</artifactId>
+            <version>0.26.4</version>
         </dependency>
 
         <dependency>
             <groupId>io.reactivex</groupId>
-            <artifactId>rxscala_2.11</artifactId>
-            <version>0.26.0</version>
+            <artifactId>rxjavafx</artifactId>
+            <version>0.3.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>2.11.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nl.rvanheest</groupId>
+            <artifactId>feedback4s</artifactId>
+            <version>0.1</version>
         </dependency>
     </dependencies>
 
@@ -69,7 +74,6 @@
                         <goals>
                             <goal>compile</goal>
                             <goal>testCompile</goal>
-                            <goal>doc-jar</goal>
                         </goals>
                     </execution>
                 </executions>

@@ -5,3 +5,4 @@ An API for creating Feedback Control Systems in Scala.
  * [Code of Conduct](CODE_OF_CONDUCT.md)
  * [API Documentation](https://rvanheest.github.io/feedback4s/)
  * [Blog about feedback control](http://rvanheest.github.io/Literature-Study-Feedback-Control/)
+ * [Demo's for intended use](demo/src/main/scala/nl/rvanheest/feedback4s/demo)
