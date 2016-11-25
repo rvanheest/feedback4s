@@ -7,21 +7,104 @@ import scala.concurrent.duration.Duration
 
 package object feedback4s {
 
+	/**
+		* Adds operators for composition of `Component`s in various ways.
+		*
+		* Examples:
+		* {{{
+		*   import nl.rvanheest.feedback4s.Component
+    *
+    *   val x = new Component[Int, String](in => in.map(_.toChar).scan("")(_ + _).drop(1))
+    *   val y = Component.create[String, Int](_.length)
+    *   val z = Component.identity[Int]
+    *
+    *   val a1: Component[Int, Int] = x >>> y
+    *   val a2: Component[Int, Int] = x.concat(y)
+    *   val b: Component[(Int, Long), (String, Long)] = x.first[Long]
+    *   val c: Component[(Long, Int), (Long, String)] = x.second[Long]
+    *   val d1: Component[(Int, String), (String, Int)] = x *** y
+    *   val d2: Component[(Int, String), (String, Int)] = x.split(y)
+    *   val e1: Component[Int, (String, Int)] = x &&& z
+    *   val e2: Component[Int, (String, Int)] = x.fanout(z)
+    *   val f: Component[Int, Int] = x.combine(z)((s, i) => s.length + i)
+		* }}}
+		*
+		* @param src the `Component` to compose with
+		* @tparam I the input type of `src`
+		* @tparam O the output type of `src`
+		*/
 	implicit class ArrowOperators[I, O](val src: Component[I, O]) {
+
+		/**
+			* Concatenates two `Component`s horizontally. The output of `src` will be the input of `other`.
+			* The resulting `Component` will be a wrapper around the two combined `Component`s.
+			*
+			* ''This is the symbolic equivalent of the [[concat]] operator.''
+			*
+			* <img src="https://www.haskell.org/arrows/compose.png" alt="concat">
+			*
+			* @param other the right-hand `Component` in this composition
+			* @tparam X the output type of `other`
+			* @return a `Component` that wraps around the concatenation of `src` and `other`
+			* @see [[concat]]
+			*/
 		def >>>[X](other: Component[O, X]): Component[I, X] = this concat other
 
+		/**
+			* Concatenates two `Component`s horizontally. The output of `src` will be the input of `other`.
+			* The resulting `Component` will be a wrapper around the two combined `Component`s.
+			*
+			* <img src="https://www.haskell.org/arrows/compose.png" alt="concat">
+			*
+			* @param other the right-hand `Component` in this composition
+			* @tparam X the output type of `other`
+			* @return a `Component` that wraps around the concatenation of `src` and `other`
+			* @see [[>>>]]
+			*/
 		def concat[X](other: Component[O, X]): Component[I, X] = {
 			Component(other.run _ compose src.run)
 		}
 
+		/**
+			* Vertically composes `src` with an identity `Component` of type `X`.
+			*
+			* ''Note that this operator is the opposite of [[second]]: here the `X` is the second
+			* element in the tuple.''
+			*
+			* <img src="https://www.haskell.org/arrows/first.png" alt="first">
+			*
+			* @tparam X the input and output type of the identity `Component`
+			* @return a `Component` that wraps around the composition of `src` and `identity[X]`
+			*/
 		def first[X]: Component[(I, X), (O, X)] = {
 			this *** Component.identity[X]
 		}
 
+		/**
+			* Vertically composes an identity `Component` of type `X` with `src`.
+			*
+			* ''Note that this operator is the opposite of [[first]]: here the `X` is the first
+			* element in the tuple.''
+			*
+			* @tparam X the input and output type of the identity `Component`
+			* @return a `Component` that wraps around the composition of `src` and `identity[X]`
+			*/
 		def second[X]: Component[(X, I), (X, O)] = {
 			Component.identity[X] *** src
 		}
 
+		/**
+			* Vertically composes `src` with `other`. The `Observable`s in each `Component` are zipped
+			* and wrapped in a new `Component`.
+			*
+			* ''This is the symbolic equivalent of the [[split]] operator.''
+			*
+			* @param other the other `Component` in this composition
+			* @tparam X the input type of `other`
+			* @tparam Y the output type of `other`
+			* @return a `Component` that wraps around the composition of `src` and `other`
+			* @see [[split]]
+			*/
 		/*
 			this way of implementing (first and second dependend on ***) is more efficient in case of
 			Observables since you only need 1 zipWith operator
@@ -29,24 +112,78 @@ package object feedback4s {
 		 */
 		def ***[X, Y](other: Component[X, Y]): Component[(I, X), (O, Y)] = this split other
 
+		/**
+			* Vertically composes `src` with `other`. The `Observable`s in each `Component` are zipped
+			* and wrapped in a new `Component`.
+			*
+			* @param other the other `Component` in this composition
+			* @tparam X the input type of `other`
+			* @tparam Y the output type of `other`
+			* @return a `Component` that wraps around the composition of `src` and `other`
+			* @see [[***]]
+			*/
 		def split[X, Y](other: Component[X, Y]): Component[(I, X), (O, Y)] = {
 			Component(_.publish(ixs => {
 				src.run(ixs.map(_._1)).zipWith(other.run(ixs.map(_._2)))((_, _))
 			}))
 		}
 
+		/**
+			* Vertically composes `src` with `other` such that the input of the wrapping `Component`
+			* is emitted to both `src` and `other`. For this to work, both `Component`s must have the
+			* same input type. The outputs of the components are combined in a tuple.
+			*
+			* ''This is the symbolic equivalent of the [[fanout]] operator.''
+			*
+			* @param other the other `Component` in this composition
+			* @tparam X the output type of `other`
+			* @return a `Component` that wraps around the composition of `src` and `other` and sends
+			*         its input to both `src` and `other`
+			* @see [[fanout]]
+			*/
 		def &&&[X](other: Component[I, X]): Component[I, (O, X)] = this fanout other
 
+		/**
+			* Vertically composes `src` with `other` such that the input of the wrapping `Component`
+			* is emitted to both `src` and `other`. For this to work, both `Component`s must have the
+			* same input type. The outputs of the components are combined in a tuple.
+			*
+			* @param other the other `Component` in this composition
+			* @tparam X the output type of `other`
+			* @return a `Component` that wraps around the composition of `src` and `other`
+			* @see [[&&&]]
+			*/
 		def fanout[X](other: Component[I, X]): Component[I, (O, X)] = {
 			Component.create[I, (I, I)](a => (a, a)) >>> (src *** other)
 		}
 
+		/**
+			* Vertically composes `src` with `other` such that the input of the wrapping `Component`
+			* is emitted to both `src` and `other`, while their output types are combined using the
+			* function `f`. For this to work, both `Component`s must have the same input type.
+			*
+			* <img src="https://www.haskell.org/arrows/addA.png" alt="combine">
+			*
+			* @param other the other `Component` in this composition
+			* @param f the combine function that computes the overall output given the outputs of
+			*          both `src` and `other`
+			* @tparam X the output type of `other`
+			* @tparam Y the output type of the wrapping `Component`
+			* @return a `Component` that wraps around the composition of `src` and `other`
+			*/
 		// called LiftA2 in Haskell
 		def combine[X, Y](other: Component[I, X])(f: (O, X) => Y): Component[I, Y] = {
 			(src &&& other) >>> Component.create(f.tupled)
 		}
 	}
 
+	/**
+		* Adds functorial and applicative operators for `Component`
+		*
+		* @param src
+		* @tparam I the input type of `src`
+		* @tparam O the output type of `src`
+		*/
 	implicit class ApplicativeOperators[I, O](val src: Component[I, O]) {
 		def map[X](f: O => X): Component[I, X] = {
 			src >>> Component.create(f)
@@ -69,6 +206,12 @@ package object feedback4s {
 		}
 	}
 
+	/**
+		*
+		* @param src
+		* @tparam I the input type of `src`
+		* @tparam O the output type of `src`
+		*/
 	implicit class RxOperators[I, O](val src: Component[I, O]) {
 		def doOnCompleted(consumer: => Unit): Component[I, O] = {
 			liftRx(_.doOnCompleted(consumer))
@@ -143,6 +286,12 @@ package object feedback4s {
 		}
 	}
 
+	/**
+		*
+		* @param src
+		* @tparam I the input type of `src`
+		* @tparam O the output type of `src`
+		*/
 	implicit class FeedbackOperators[I, O](val src: Component[I, O]) {
 		private def loop[T, S](transOut: Observable[T], setpoint: Observable[S])(combinator: (T, S) => I): Observable[I] = {
 			transOut.publish(tos => setpoint.publish(sps =>
