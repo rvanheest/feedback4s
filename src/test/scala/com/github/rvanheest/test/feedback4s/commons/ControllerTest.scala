@@ -15,10 +15,7 @@
  */
 package com.github.rvanheest.test.feedback4s.commons
 
-import java.util.concurrent.CountDownLatch
-
-import nl.rvanheest.feedback4s.commons.Controllers
-import org.junit.Assert.{assertEquals, assertTrue}
+import com.github.rvanheest.feedback4s.commons.Controllers
 import org.junit.Test
 import rx.lang.scala.Subject
 import rx.lang.scala.observers.TestSubscriber

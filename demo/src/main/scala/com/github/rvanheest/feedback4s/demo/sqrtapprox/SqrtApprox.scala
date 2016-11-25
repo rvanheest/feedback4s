@@ -16,7 +16,6 @@
 package com.github.rvanheest.feedback4s.demo.sqrtapprox
 
 import com.github.rvanheest.feedback4s.Component
-import nl.rvanheest.feedback4s.Component
 import rx.lang.scala.subjects.PublishSubject
 
 object SqrtApprox extends App {

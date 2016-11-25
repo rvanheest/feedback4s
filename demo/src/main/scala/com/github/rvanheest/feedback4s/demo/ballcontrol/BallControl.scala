@@ -24,8 +24,6 @@ import javafx.stage.Stage
 
 import com.github.rvanheest.feedback4s.Component
 import com.github.rvanheest.feedback4s.commons.Controllers
-import nl.rvanheest.feedback4s.Component
-import nl.rvanheest.feedback4s.commons.Controllers
 import rx.lang.scala.JavaConverters._
 import rx.observables.JavaFxObservable
 import rx.schedulers.JavaFxScheduler

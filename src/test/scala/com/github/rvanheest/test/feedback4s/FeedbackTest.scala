@@ -15,7 +15,7 @@
  */
 package com.github.rvanheest.test.feedback4s
 
-import nl.rvanheest.feedback4s.Component
+import com.github.rvanheest.feedback4s.Component
 import org.junit.Test
 import rx.lang.scala.Subject
 import rx.lang.scala.observers.TestSubscriber

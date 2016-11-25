@@ -16,7 +16,6 @@
 package com.github.rvanheest.feedback4s.commons
 
 import com.github.rvanheest.feedback4s.Component
-import nl.rvanheest.feedback4s.Component
 import rx.lang.scala.Observable
 
 import scala.language.postfixOps
