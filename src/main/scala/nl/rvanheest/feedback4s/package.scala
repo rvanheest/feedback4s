@@ -281,7 +281,7 @@ package object feedback4s {
 		/**
 			* Modifies the source `Component` so that it invokes an action when it calls onCompleted.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnCompleted.png" alt="doOnCompleted">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnCompleted.png" alt="doOnCompleted" height="250">
 			*
 			* @param onCompleted the action to invoke when the source `Component` calls onCompleted
 			* @return the source `Component` with the side-effecting behavior applied
@@ -293,7 +293,7 @@ package object feedback4s {
 		/**
 			* Modifies the source `Component` so that it invokes an action for each item and terminal event it emits.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnEach.o.png" alt="doOnEach">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnEach.o.png" alt="doOnEach" height="250">
 			*
 			* @param observer the `Observer` to be notified about onNext, onError and onCompleted events
 			*                 on its respective methods before the actual downstream Subscriber gets notified.
@@ -308,7 +308,7 @@ package object feedback4s {
 			* In case the onError action throws, the downstream will receive a composite exception
 			* containing the original exception and the exception thrown by onError.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnError.png" alt="doOnError">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnError.png" alt="doOnError" height="250">
 			*
 			* @param onError the action to invoke if the source `Component` calls onError
 			* @return the source `Component` with the side-effecting behavior applied
@@ -320,7 +320,7 @@ package object feedback4s {
 		/**
 			* Modifies the source `Component` so that it invokes an action when it calls onNext.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnNext.png" alt="doOnNext">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/doOnNext.png" alt="doOnNext" height="250">
 			*
 			* @param onNext the action to invoke when the source `Component` calls onNext
 			* @return the source `Component` with the side-effecting behavior applied
@@ -333,7 +333,7 @@ package object feedback4s {
 			* Returns an `Component` that skips the first count items emitted by the source `Component`
 			* and emits the remainder.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/skip.png" alt="drop">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/skip.png" alt="drop" height="250">
 			*
 			* @param n the number of items to skip
 			* @return an `Component` that is identical to the source `Component` except that it does not
@@ -348,7 +348,7 @@ package object feedback4s {
 			* specified condition holds true, but emits all further source items as soon as the
 			* condition becomes false.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/skipWhile.png" alt="dropWhile">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/skipWhile.png" alt="dropWhile" height="250">
 			*
 			* @param predicate a function to test each item emitted from the source `Component`
 			* @return an `Component` that begins emitting items emitted by the source `Component`
@@ -361,7 +361,7 @@ package object feedback4s {
 		/**
 			* Filters items emitted by an `Component` by only emitting those that satisfy a specified predicate.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/filter.png" alt="filter">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/filter.png" alt="filter" height="250">
 			*
 			* @param predicate a function that evaluates each item emitted by the source `Component`,
 			*                  returning true if it passes the filter
@@ -388,7 +388,7 @@ package object feedback4s {
 			* by the source `Component` within periodic time intervals, where the intervals are
 			* defined on a particular `Scheduler`.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/sample.s.png" alt="sample">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/sample.s.png" alt="sample" height="250">
 			*
 			* @param interval the sample rate
 			* @param scheduler the `Scheduler` to use when sampling
@@ -403,7 +403,7 @@ package object feedback4s {
 			* Returns an `Component` that emits a specified item before it begins to emit
 			* items emitted by the source `Component`.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/startWith.o.png" alt="startWith">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/startWith.o.png" alt="startWith" height="250">
 			*
 			* @param o the item to emit
 			* @return an `Component` that emits the specified item before it begins to emit
@@ -420,7 +420,7 @@ package object feedback4s {
 			* the same function, and so on until all items have been emitted by the source
 			* `Component`, emitting the result of each of these iterations.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/scanSeed.png" alt="scan">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/scanSeed.png" alt="scan" height="250">
 			*
 			* @param seed the initial (seed) accumulator item
 			* @param combiner an accumulator function to be invoked on each item emitted by the
@@ -437,7 +437,8 @@ package object feedback4s {
 		/**
 			* Returns an `Component` that emits only the first count items emitted by the source
 			* `Component`. If the source emits fewer than count items then all of its items are emitted.
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/take.png" alt="take">
+			*
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/take.png" alt="take" height="250">
 			*
 			* @param n the maximum number of items to emit
 			* @return an `Component` that emits only the first count items emitted by the source
@@ -452,7 +453,7 @@ package object feedback4s {
 			* checks the specified predicate for each item, and then completes when the condition
 			* is satisfied.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/takeUntil.p.png" alt="">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/takeUntil.p.png" alt="takeUntil" height="250">
 			*
 			* @param predicate a function that evaluates an item emitted by the source `Component`
 			*                  and returns a Boolean
@@ -469,7 +470,7 @@ package object feedback4s {
 			* long as each item satisfied a specified condition, and then completes as
 			* soon as this condition is not satisfied.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/takeWhile.png" alt="takeWhile">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/takeWhile.png" alt="takeWhile" height="250">
 			*
 			* @param predicate a function that evaluates an item emitted by the source `Component` and returns a Boolean
 			* @return an `Component` that emits the items from the source `Component`
@@ -488,7 +489,7 @@ package object feedback4s {
 			* tracks passage of time whereas throttleLast(long, java.util.concurrent.TimeUnit) ticks
 			* at scheduled intervals.
 			*
-			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/throttleFirst.s.png" alt="throttleFirst">
+			* <img src="https://raw.github.com/wiki/ReactiveX/RxJava/images/rx-operators/throttleFirst.s.png" alt="throttleFirst" height="250">
 			*
 			* @param duration time to wait before emitting another item after emitting the last item
 			* @param scheduler the Scheduler to use internally to manage the timers that handle timeout for each event
