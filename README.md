@@ -1,4 +1,7 @@
-# feedback4s
+feedback4s
+==========
+[![Build Status](https://travis-ci.org/rvanheest/feedback4s.png?branch=master)](https://travis-ci.org/rvanheest/feedback4s)
+
 An API for creating Feedback Control Systems in Scala.
 
  * [Apache 2.0 License](LICENSE)
