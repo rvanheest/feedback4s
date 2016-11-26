@@ -10,4 +10,4 @@ position.
 
 [PID-controller]: http://rvanheest.github.io/Literature-Study-Feedback-Control/Controllers.html#pid-control
 
-![screen-shot](../../../../../../resources/BallControl-screenshot.png)
+![screen-shot](../../../../../../../resources/BallControl-screenshot.png)
