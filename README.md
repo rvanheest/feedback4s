@@ -2,6 +2,7 @@ feedback4s
 ==========
 [![Build Status](https://travis-ci.org/rvanheest/feedback4s.png?branch=master)](https://travis-ci.org/rvanheest/feedback4s)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.rvanheest/feedback4s/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.rvanheest/feedback4s)
+[![DOI](https://zenodo.org/badge/67620912.svg)](https://zenodo.org/badge/latestdoi/67620912)
 
 An API for creating Feedback Control Systems in Scala.
 
